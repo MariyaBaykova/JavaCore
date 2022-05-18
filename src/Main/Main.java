@@ -7,6 +7,9 @@ import obstacleCourse.Swimming;
 import team.Team;
 import team.TeamMember;
 
+/**
+ * Lesson-1 домашнее задание
+ */
 public class Main {
     public static void main(String[] args) {
         Team rocketTeam = new Team("RocketTeam",
