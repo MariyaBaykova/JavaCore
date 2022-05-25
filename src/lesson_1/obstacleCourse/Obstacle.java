@@ -1,6 +1,6 @@
-package obstacleCourse;
+package lesson_1.obstacleCourse;
 
-import team.TeamMember;
+import lesson_1.team.TeamMember;
 
 public abstract class Obstacle {
     private final int difficulty;
