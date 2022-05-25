@@ -1,11 +1,12 @@
-package Main;
+package lesson_1.main;
 
-import obstacleCourse.Course;
-import obstacleCourse.Cross;
-import obstacleCourse.Fight;
-import obstacleCourse.Swimming;
-import team.Team;
-import team.TeamMember;
+
+import lesson_1.obstacleCourse.Course;
+import lesson_1.obstacleCourse.Cross;
+import lesson_1.obstacleCourse.Fight;
+import lesson_1.obstacleCourse.Swimming;
+import lesson_1.team.Team;
+import lesson_1.team.TeamMember;
 
 public class Main {
     public static void main(String[] args) {

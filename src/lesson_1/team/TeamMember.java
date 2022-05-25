@@ -1,6 +1,6 @@
-package team;
+package lesson_1.team;
 
-import Main.Status;
+import lesson_1.main.Status;
 
 public class TeamMember {
 

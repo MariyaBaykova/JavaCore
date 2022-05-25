@@ -1,8 +1,8 @@
-package obstacleCourse;
+package lesson_1.obstacleCourse;
 
-import Main.Status;
-import team.Team;
-import team.TeamMember;
+import lesson_1.main.Status;
+import lesson_1.team.Team;
+import lesson_1.team.TeamMember;
 
 public class Course {
     private Obstacle[] obstacles;
