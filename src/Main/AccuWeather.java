@@ -16,7 +16,6 @@ public class AccuWeather {
 
 
 
-
     private static final String Tomsk_KEY = "290868";
     private static final String API_KEY = "N2EJQHAsHVR9AOkkZO9eLRBKk3dvOAr2";
 
