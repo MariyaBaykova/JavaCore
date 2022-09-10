@@ -1,19 +1,19 @@
-package Main;
-
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 
 import java.io.IOException;
+import java.util.List;
 
-public class AccuWeather {
+public class Main {
 
     private static final String BASE_HOST = "dataservice.accuweather.com";
     private static final String FORECAST = "forecasts";
     private static final String API_VERSION = "v1";
     private static final String FORECAST_TYPE = "daily";
     private static final String FORECAST_PERIOD = "5day";
-
 
 
     private static final String Tomsk_KEY = "290868";
@@ -46,6 +46,19 @@ public class AccuWeather {
                 .build();
 
         String jsonResponse = client.newCall(requesthttp).execute().body().string();
-        System.out.println(jsonResponse);
+
+        int firstIndexBody = jsonResponse.indexOf("[{\"Date\"");
+        int lastIndexBody = jsonResponse.lastIndexOf("}");
+        jsonResponse = jsonResponse.substring(firstIndexBody, lastIndexBody);
+
+        ObjectMapper om = new ObjectMapper();
+
+        List<WeatherResponse> weatherResponseList = om.readValue(jsonResponse, new TypeReference<List<WeatherResponse>>() {});
+
+        for (WeatherResponse weather: weatherResponseList) {
+            System.out.println("В городе Томск на следующую дату " + weather.getDate().substring(0, 10) +
+                    " ожидается такая погода: Минимальная температура " + weather.getTemperature().getMinimum().getValue() + "°С. Максимальная температура " +
+                    weather.getTemperature().getMaximum().getValue() + "°С. Днём - " + weather.getDay().getIconPhrase() + ". Ночью - " + weather.getNight().getIconPhrase() + ".");
+        }
     }
 }
