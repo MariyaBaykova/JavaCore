@@ -1,12 +1,14 @@
+package dto;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class Metric {
+class Imperial {
     @Override
     public String toString() {
-        return "Metric{" +
+        return "Imperial{" +
                 "Unit='" + Unit + '\'' +
                 ", UnitType=" + UnitType +
                 ", Value=" + Value +
